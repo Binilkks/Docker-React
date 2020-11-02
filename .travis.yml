@@ -1,3 +1,4 @@
+language: generic
 sudo: required
 services: 
     - docker
@@ -6,5 +7,5 @@ before_install:
     - docker build -t binilkks/Docker-React -f Dockerfile.dev .
     
 script:
-    -  docker run binilkks/Docker-React npm run test -- --coverage
+    - docker run -e CI=true binilkks/Docker-React npm run test
 
