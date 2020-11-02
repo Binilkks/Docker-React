@@ -4,6 +4,7 @@ services:
 
 before_install:
     - docker build -t binilkks/Docker-React -f Dockerfile.dev .
+    
 script:
     -  docker run binilkks/Docker-React npm run test -- --coverage
 
